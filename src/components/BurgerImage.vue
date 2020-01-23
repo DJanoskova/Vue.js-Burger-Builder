@@ -39,7 +39,7 @@ export default {
 
 <style scoped>
 .burger {
-  padding: 2rem;
+  padding: 2rem 4rem;
   max-width: 450px;
 }
 </style>

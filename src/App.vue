@@ -3,14 +3,16 @@
     <div class="builder">
       <SelectIngredients :selected="model" @onAdd="handleAdd" @onRemove="handleRemove" @onReset="handleReset" />
       <BurgerImage :ingredients="model" />
+      <pre>{{ model }}</pre>
     </div>
+    Total sum of your burger: {{ total }} €
   </div>
 </template>
 
 <script>
 import './assets/app.css'
 
-import { getBaseIngredients } from './models/ingredients'
+import { getBaseIngredients, ingredients } from './models/ingredients'
 
 import BurgerImage from './components/BurgerImage'
 import SelectIngredients from './components/SelectIngredients'
@@ -34,6 +36,15 @@ export default {
       this.model = getBaseIngredients()
     }
   },
+  computed: {
+    total () {
+      const result = this.model.reduce((sum, ingredientName) => {
+        const ingredientData = ingredients.find(ingredient => ingredient.name === ingredientName)
+        return sum + ingredientData.price
+      }, 0)
+      return result.toFixed(2)
+    }
+  },
   components: {
     BurgerImage,
     SelectIngredients
@@ -49,10 +60,17 @@ export default {
   justify-content: center;
   height: 100%;
   box-sizing: border-box;
+  flex-direction: column;
 }
 
 .builder {
   display: flex;
   align-items: center;
+}
+
+pre {
+  background: #f1f1f1;
+  padding: 1rem;
+  border-radius: 0.5rem;
 }
 </style>

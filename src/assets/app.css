@@ -9,10 +9,21 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+a {
+    color: #4cc755;
+    font-weight: bold;
+    transition: 0.2s;
+    font-size: 0.9rem;
+    margin: 0.3rem;
+}
+
+a:hover {
+    color: #44b14c;
+}
+
 img {
     max-width: 100%;
 }
-
 
 button {
     border: none;

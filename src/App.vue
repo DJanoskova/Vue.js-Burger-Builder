@@ -5,7 +5,14 @@
       <BurgerImage :ingredients="model" />
       <pre>{{ model }}</pre>
     </div>
-    Total sum of your burger: {{ total }} €
+
+    <div class="text-center">
+      Total sum of your burger: {{ total }} €
+      <br />
+      <a href="https://github.com/DJanoskova/Vue.js-Burger-Builder" target="_blank">
+        https://github.com/DJanoskova/Vue.js-Burger-Builder
+      </a>
+    </div>
   </div>
 </template>
 
@@ -57,10 +64,10 @@ export default {
   padding: 2rem;
   display: flex;
   align-items: center;
-  justify-content: center;
   height: 100%;
   box-sizing: border-box;
   flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .builder {

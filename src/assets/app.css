@@ -1,0 +1,57 @@
+html, body {
+    display: block;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+button {
+    border: none;
+    transition: 0.2s;
+    cursor: pointer;
+    background: #eaeaea;
+    outline: none;
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.3rem;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background: #dbdbdb;
+}
+
+button.primary {
+    background: #4cc755;
+    color: #ffffff;
+}
+
+button.primary:hover {
+    background: #44b14c;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-2 {
+    margin-top: 1rem;
+}
+
+.list-enter-active, .list-leave-active {
+    transition: all 0.5s;
+}
+
+.list-enter, .list-leave-to {
+    opacity: 0;
+    transform: translateY(-30px);
+}
